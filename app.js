@@ -10,10 +10,13 @@ import anime from '/node_modules/animejs/lib/anime.es.js';
 //     direction: 'alternate',
 // }); 
 
+
 let name = document.getElementById("my-name");
 let namemoulesh = document.querySelector(".namemoulesh");
+let blob = document.querySelector(".blob");
+
 anime ({
-    targets: 'path',
+    targets: '.namemoulesh',
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: 'easeInOutSine',
     duration: 14000,
@@ -21,7 +24,18 @@ anime ({
     direction: 'alternate-reverse',
 });
 
-// ScrollReveal().reveal('.namemoulesh');
+anime ({
+    targets: '.blob',
+    translateX: 10,
+    skew: '10',
+    rotate: '20',
+    scale: 1.1,
+    duration: 2000,
+    easing: 'easeInOutSine',
+    direction: 'alternate',
+    loop:true,
+});
+
 
 
 
@@ -32,4 +46,11 @@ name.addEventListener('mouseover', () => {
 
 name.addEventListener('mouseout', () => {
     namemoulesh.classList.remove('fill-blue-500');
+});
+
+blob.addEventListener('mouseover', (e)=> {
+    anime ({
+        targets: '.blob',
+        
+    })
 });
